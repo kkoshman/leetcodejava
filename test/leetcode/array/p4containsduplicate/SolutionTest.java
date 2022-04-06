@@ -1,9 +1,7 @@
 package leetcode.array.p4containsduplicate;
 
-import org.junit.jupiter.api.Test;
-import org.testng.Assert;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 class SolutionTest {
     public Solution s = new Solution2();
@@ -13,17 +11,17 @@ class SolutionTest {
     }
 
     @Test
-    void containsDuplicate1() {
-        containsDuplicate(new int[]{1,2,3,1}, true);
+    public void containsDuplicate1() {
+        containsDuplicate(new int[]{1, 2, 3, 1}, true);
     }
 
     @Test
-    void containsDuplicate2() {
-        containsDuplicate(new int[]{1,2,3,4}, false);
+    public void containsDuplicate2() {
+        containsDuplicate(new int[]{1, 2, 3, 4}, false);
     }
 
     @Test
-    void containsDuplicate3() {
-        containsDuplicate(new int[]{1,1,1,3,3,4,3,2,4,2}, true);
+    public void containsDuplicate3() {
+        containsDuplicate(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}, true);
     }
 }

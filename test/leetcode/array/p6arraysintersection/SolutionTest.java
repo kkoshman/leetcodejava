@@ -1,25 +1,19 @@
 package leetcode.array.p6arraysintersection;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import org.testng.internal.junit.ArrayAsserts;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.Arrays;
 
 
 public class SolutionTest {
-    public Solution s;
-
-    @BeforeTest
-    public void setup() {
-        s = new Solution1();
-    }
+    public Solution s = new Solution1();
 
     protected void test(int[] in1, int[] in2, int[] out) {
         int[] result = s.intersect(in1, in2);
         Arrays.sort(result);
         Arrays.sort(out);
-        ArrayAsserts.assertArrayEquals(out, result);
+        Assert.assertArrayEquals(out, result);
     }
 
     @Test
