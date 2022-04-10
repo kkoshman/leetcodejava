@@ -33,6 +33,6 @@ public class MoveZerosTest {
 
     @Test
     public void noZerosHandled() {
-        test(new int[]{1,2,3,}, new int[]{1,2,3});
+        test(new int[]{1,2,3}, new int[]{1,2,3});
     }
 }
