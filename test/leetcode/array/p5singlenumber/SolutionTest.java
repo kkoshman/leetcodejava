@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SolutionTest {
-    public Solution s = new Solution2();
+    public Solution s = new Solution3();
 
     public void test(int[] nums, int singleNum) {
         Assert.assertEquals(s.singleNumber(nums), singleNum);
