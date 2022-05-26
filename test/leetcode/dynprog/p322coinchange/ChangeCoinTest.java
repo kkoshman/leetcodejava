@@ -8,7 +8,7 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class ChangeCoinTest {
-    public Solution s = new Solution1();
+    public Solution s = new Solution2();
     public int[] coins;
     public int amount;
     public int expCoinNum;
@@ -22,6 +22,7 @@ public class ChangeCoinTest {
     @Parameterized.Parameters
     public static Object[][] getTests() {
         return new Object[][]{
+                new Object[] {new int[]{1,2147483647}, 2, 2},
                 new Object[] {new int[]{357,239,73,52}, 9832, 35},
                 new Object[] {new int[]{186,419,83,408}, 6249, 20},
                 new Object[] {new int[]{1,2,5}, 11, 3},

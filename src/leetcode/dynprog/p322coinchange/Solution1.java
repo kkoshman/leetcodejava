@@ -9,26 +9,28 @@ public class Solution1 implements Solution{
         Arrays.fill(memory, -1);
         memory[0] = 0;
         int result = coinChange(coins, 0, amount, memory);
-        return result == Integer.MAX_VALUE ? -1 : result;
-    }
 
+        return result >= MAX_IMPOSSIBLE ? -1 : result;
+    }
+    private static final int MAX_IMPOSSIBLE = 100000;
     private int coinChange(int[] coins, int startCoinIdx, int amount, int[] memory) {
         if (amount < 0) {
-            return Integer.MAX_VALUE;
+            return MAX_IMPOSSIBLE;
         }
         if (memory[amount] >= 0) {
             return memory[amount];
         }
         if (startCoinIdx >= coins.length){
-            return Integer.MAX_VALUE;
+            return MAX_IMPOSSIBLE;
         }
 
         int withCoin = coinChange(coins, startCoinIdx, amount - coins[startCoinIdx], memory);
-        if (withCoin < Integer.MAX_VALUE) {
+        if (withCoin < MAX_IMPOSSIBLE) {
             withCoin += 1;
         }
         int withoutCoin = coinChange(coins, startCoinIdx + 1, amount, memory);
         memory[amount] = Math.min(withCoin, withoutCoin);
+        System.out.print("m[" + amount + "]=" + memory[amount] + "   ");
         return memory[amount];
     }
 }
